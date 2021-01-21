@@ -1,0 +1,29 @@
+body{
+    background-image: url('concert.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.row{
+    display: flex;
+    justify-content: center;
+}
+.key{
+    height: 7rem;
+    width: 7rem;
+    border:whitesmoke 3px solid;
+    border-radius: 10px;
+    margin:6px;
+    margin-top:26vh ;
+    text-align: center;
+    font-family: 'Gorditas', cursive;
+    color: white;
+    padding: 5px;
+    font-size: 4rem;
+}
+.heading{
+    font-size: 70px;
+    margin-top:28vh ;
+    color: black;
+    text-align: center;
+    font-family: 'Gorditas', cursive;
+}
