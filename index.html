@@ -10,15 +10,38 @@
     <body>
         <h1 class='heading'>DRUM-KIT</h1>
         <div class="row">
-            <div class='key'>A</div>
-            <div class='key'>S</div>
-            <div class='key'>D</div>
-            <div class='key'>F</div>
-            <div class='key'>G</div>
-            <div class='key'>H</div>
-            <div class='key'>J</div>
-            <div class='key'>K</div>
-            <div class='key'>L</div>
-        </div>   
+            <div class="key" data-key="KeyA" >A <span class='beat'>clap</span></div>
+            <div class="key" data-key="KeyS" >S <span class='beat'>boom</span></div>
+            <div class="key" data-key="KeyD" >D <span class='beat'>hihat</span></div>
+            <div class="key" data-key="KeyF" >F <span class='beat'>kick</span></div>
+            <div class="key" data-key="KeyG" >G <span class='beat'>openhat</span></div>
+            <div class="key" data-key="KeyH" >H <span class='beat'>ride</span></div>
+            <div class="key" data-key="KeyJ" >J <span class='beat'>tom</span></div>
+            <div class="key" data-key="KeyK" >K <span class='beat'>tink</span></div>
+            <div class="key" data-key="KeyL" >L <span class='beat'>snare</span></div>
+            <audio data-key="KeyA" src="./sounds/clap.wav"></audio>
+            <audio data-key="KeyS" src="./sounds/boom.wav"></audio>            
+            <audio data-key="KeyD" src="./sounds/hihat.wav"></audio>
+            <audio data-key="KeyF" src="./sounds/kick.wav"></audio>
+            <audio data-key="KeyG" src="./sounds/openhat.wav"></audio>
+            <audio data-key="KeyH" src="./sounds/ride.wav"></audio>
+            <audio data-key="KeyJ" src="./sounds/tom.wav"></audio>
+            <audio data-key="KeyK" src="./sounds/tink.wav"></audio>
+            <audio data-key="KeyL" src="./sounds/snare.wav"></audio>
+        </div>
+        <script>
+            window.addEventListener('keydown', function(e){
+                const audio=document.querySelector(`audio[data-key="${e.code}"]`);
+                console.log(audio);
+                console.log(e.code);
+                if(!audio)return;
+                audio.currentTime=0;
+                audio.play();
+                const key=document.querySelector(`.key[data-key="${e.code}"]`);
+                key.classList.add('playing');
+                setTimeout(()=>key.classList.remove('playing'),300);
+
+            });
+        </script>   
     </body>    
 </html>

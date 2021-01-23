@@ -27,3 +27,11 @@ body{
     text-align: center;
     font-family: 'Gorditas', cursive;
 }
+.beat{
+    display:block;
+    font-size:1.2rem;
+}
+.playing{
+    border:cornflowerblue 3px solid;
+    box-shadow: 5px 10px 10px rgb(9, 108, 116);
+}
